@@ -159,3 +159,27 @@
   });
 
 })(jQuery);
+
+// Initialize Typewriter
+var app = document.getElementById('autoWrite');
+var typewriter = new Typewriter(app, {
+  loop: true,
+  delay: 75,
+});
+
+typewriter
+  .pauseFor(1000)
+  .typeString('Software Developer')
+  .pauseFor(1000)
+  .deleteAll()
+  .typeString('Java Developer')
+  .pauseFor(1000)
+  .deleteAll()
+  .typeString('Python Developer')
+  .pauseFor(1000)
+  .deleteAll()
+  .typeString('Problem Solver')
+  .pauseFor(1000)
+  .deleteAll()
+  .start();
+
