@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Nerdy Portfolio Design System - Cyberpunk Terminal Theme
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Cyberpunk Dark Theme */
+    --background: 220 27% 3%;
+    --foreground: 180 100% 95%;
+
+    --card: 220 27% 5%;
+    --card-foreground: 180 100% 95%;
+
+    --popover: 220 27% 4%;
+    --popover-foreground: 180 100% 95%;
+
+    /* Neon Cyan Primary */
+    --primary: 180 100% 50%;
+    --primary-foreground: 220 27% 3%;
+
+    /* Darker Secondary */
+    --secondary: 220 27% 8%;
+    --secondary-foreground: 180 100% 95%;
+
+    --muted: 220 27% 10%;
+    --muted-foreground: 180 30% 70%;
+
+    /* Neon Green Accent */
+    --accent: 120 100% 50%;
+    --accent-foreground: 220 27% 3%;
+
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 180 100% 95%;
+
+    --border: 220 27% 15%;
+    --input: 220 27% 8%;
+    --ring: 180 100% 50%;
+
+    --radius: 0.5rem;
+
+    /* Custom Design Tokens */
+    --cyber-glow: 180 100% 50%;
+    --terminal-green: 120 100% 50%;
+    --neon-pink: 320 100% 60%;
+    --code-blue: 220 100% 70%;
+    
+    /* Gradients */
+    --gradient-cyber: linear-gradient(135deg, hsl(180 100% 30%), hsl(120 100% 30%));
+    --gradient-terminal: linear-gradient(90deg, hsl(180 100% 50% / 0.1), hsl(120 100% 50% / 0.1));
+    --gradient-hero: linear-gradient(135deg, hsl(220 27% 3%) 0%, hsl(220 30% 8%) 50%, hsl(180 100% 5%) 100%);
+    
+    /* Shadows and Effects */
+    --shadow-cyber: 0 0 20px hsl(var(--cyber-glow) / 0.3);
+    --shadow-terminal: 0 0 10px hsl(var(--terminal-green) / 0.2);
+    --glow-text: 0 0 10px currentColor;
+    
+    /* Animations */
+    --transition-cyber: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --terminal-cursor: 1s infinite;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+/* Custom Utility Classes */
+@layer utilities {
+  .text-glow {
+    text-shadow: var(--glow-text);
+  }
+  
+  .cyber-glow {
+    box-shadow: var(--shadow-cyber);
+  }
+  
+  .terminal-glow {
+    box-shadow: var(--shadow-terminal);
+  }
+  
+  .gradient-cyber {
+    background: var(--gradient-cyber);
+  }
+  
+  .gradient-terminal {
+    background: var(--gradient-terminal);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .terminal-cursor::after {
+    content: '|';
+    animation: blink var(--terminal-cursor);
+    color: hsl(var(--terminal-green));
+  }
+  
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+}
